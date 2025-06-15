@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Card Design</title>
+    <style>
+        body {
+            background-color: gray;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .card {
+            background-color: white;
+            width: 400px;
+            border-radius: 7px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .image {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .image img {
+            border-radius: 7px;
+            width: 180px;
+        }
+
+        .capsules {
+            padding: 0 20px;
+        }
+
+        .capsules span {
+            border: 1px solid rgb(110, 90, 90);
+            padding: 4px 8px;
+            border-radius: 7px;
+            font-size: 12px;
+            margin-right: 5px;
+        }
+
+        .content {
+            padding: 20px;
+            font-size: 14px;
+        }
+
+        .btn {
+            display: block;
+            width: 90%;
+            margin: 0 auto 20px auto;
+            padding: 10px;
+            text-align: center;
+            background: blueviolet;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            background: rgb(8, 72, 133);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="image">
+                <img src="card.png" alt="Card Image">
+            </div>
+
+            <div class="capsules">
+                <span>Nature</span>
+                <span>Lake</span>
+            </div>
+
+            <div class="content">
+                <h1>Sharvan</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta impedit deleniti laboriosam nesciunt
+                    cumque
+                    dicta libero mollitia. In mollitia recusandae minus ipsa, ratione voluptatibus perspiciatis vel minima
+                    optio alias!</p>
+            </div>
+
+            <button type="submit" class="btn">Read more</button>
+        </div>
+    </div>
+</body>
+
+</html>
