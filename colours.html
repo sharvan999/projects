@@ -1,102 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CSS Card Design</title>
-    <style>
-        body {
-            background-color: gray;
-            margin: 0;
-            font-family: Arial, sans-serif;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Multicolor Theme Website</title>
+  <style>
+    :root {
+      --bg-color: #ffffff;
+      --text-color: #000000;
+      --primary-color: #3498db;
+    }
 
-        .container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      font-family: Arial, sans-serif;
+      padding: 2rem;
+      transition: background-color 0.3s, color 0.3s;
+    }
 
-        .card {
-            background-color: white;
-            width: 400px;
-            border-radius: 7px;
-            overflow: hidden;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-        }
+    h1 {
+      color: var(--primary-color);
+    }
 
-        .image {
-            text-align: center;
-            padding: 20px;
-        }
+    .theme-switcher {
+      margin-top: 2rem;
+    }
 
-        .image img {
-            border-radius: 7px;
-            width: 180px;
-        }
+    button {
+      margin-right: 10px;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+      color: white;
+    }
 
-        .capsules {
-            padding: 0 20px;
-        }
-
-        .capsules span {
-            border: 1px solid rgb(110, 90, 90);
-            padding: 4px 8px;
-            border-radius: 7px;
-            font-size: 12px;
-            margin-right: 5px;
-        }
-
-        .content {
-            padding: 20px;
-            font-size: 14px;
-        }
-
-        .btn {
-            display: block;
-            width: 90%;
-            margin: 0 auto 20px auto;
-            padding: 10px;
-            text-align: center;
-            background: blueviolet;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-weight: bold;
-        }
-
-        .btn:hover {
-            background: rgb(8, 72, 133);
-        }
-    </style>
+    .blue { background-color: #3498db; }
+    .green { background-color: #2ecc71; }
+    .red { background-color: #e74c3c; }
+    .dark { background-color: #2c3e50; }
+  </style>
 </head>
-
 <body>
-    <div class="container">
-        <div class="card">
-            <div class="image">
-                <img src="card.png" alt="Card Image">
-            </div>
+  <h1>Welcome to the Multicolor Website</h1>
+  <p>This website uses CSS variables to switch themes dynamically.</p>
 
-            <div class="capsules">
-                <span>Nature</span>
-                <span>Lake</span>
-            </div>
+  <div class="theme-switcher">
+    <h3>Choose a theme:</h3>
+    <button class="blue" onclick="setTheme('blue')">Blue</button>
+    <button class="green" onclick="setTheme('green')">Green</button>
+    <button class="red" onclick="setTheme('red')">Red</button>
+    <button class="dark" onclick="setTheme('dark')">Dark</button>
+  </div>
 
-            <div class="content">
-                <h1>Sharvan</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta impedit deleniti laboriosam nesciunt
-                    cumque
-                    dicta libero mollitia. In mollitia recusandae minus ipsa, ratione voluptatibus perspiciatis vel minima
-                    optio alias!</p>
-            </div>
+  <script>
+    const themes = {
+      blue: {
+        '--bg-color': '#ffffff',
+        '--text-color': '#000000',
+        '--primary-color': '#3498db'
+      },
+      green: {
+        '--bg-color': '#ffffff',
+        '--text-color': '#000000',
+        '--primary-color': '#2ecc71'
+      },
+      red: {
+        '--bg-color': '#ffffff',
+        '--text-color': '#000000',
+        '--primary-color': '#e74c3c'
+      },
+      dark: {
+        '--bg-color': '#1e1e1e',
+        '--text-color': '#f0f0f0',
+        '--primary-color': '#9b59b6'
+      }
+    };
 
-            <button type="submit" class="btn">Read more</button>
-        </div>
-    </div>
+    function setTheme(name) {
+      const theme = themes[name];
+      for (let varName in theme) {
+        document.documentElement.style.setProperty(varName, theme[varName]);
+      }
+    }
+  </script>
 </body>
-
 </html>
